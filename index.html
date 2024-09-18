@@ -3,12 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BU Open House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="global.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+            /* ป้องกันการเลื่อนแนวนอน */
+        }
+
+        /* ตั้งค่า box-sizing ให้กับทุกองค์ประกอบ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+    </style>
 
 <body>
     <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0   ">
@@ -58,74 +76,75 @@
         </div>
     </nav>
     <div class="bg-slate-950">
-            <div class="w-screen bg-slate-900">  
-        <img src="/public/poster.png" alt="Poster" data-aos="fade-up" data-aos-anchor-placement="top-center"
-            data-aos-duration="1000">
-    </div>
-    <div class="bg-[#5012fb] ">
-        <div class="bg-white rounded-t-[40px] p-10" data-aos="fade-up" data-aos-anchor-placement="top-center">
-            <h1 class="text-4xl font-bold text-center mb-5">ABOUT</h1>
-            <p class="text-center">
-                A phenomenal event that will take education to another level! <br>
-                Let’s dive into your passion and find the answer to all of your questions.<br>
-                Come over for real experience, let’s get creative and explore more with every <br> faculty. Let’s play
-                like a PROtogether!
-            </p>
+        <div class="w-screen bg-slate-900">
+            <img src="/public/poster.png" alt="Poster" data-aos="fade-up" data-aos-anchor-placement="top-center"
+                data-aos-duration="1000">
         </div>
-    </div>
-
-    <div class="bg-white">
-        <div class="bg-black rounded-t-[40px] p-10 text-white" data-aos="fade-up"
-            data-aos-anchor-placement="top-center">
-            <h1 class="text-4xl font-bold text-center mb-20">HIGHLIGHT</h1>
-            <div id="poster" class="flex flex-col "></div>
-        </div>
-    </div>
-
-    <div class="bg-black">
-        <div class="bg-[#5012fb] rounded-t-[40px] p-10 text-white" data-aos="fade-up"
-            data-aos-anchor-placement="top-center">
-            <h1 class="text-4xl font-bold text-center mb-20">SPONSORS</h1>
-            <div class="flex space-x-16 pl-16 pb-20">
-                <img src="/public/logo/image 17.png" alt="True">
-                <img src="/public/logo/image.png" alt="Lactasoy">
+        <div class="bg-[#5012fb] ">
+            <div class="bg-white rounded-t-[40px] p-10" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mb-5">ABOUT</h1>
+                <p class="text-center">
+                    A phenomenal event that will take education to another level! <br>
+                    Let’s dive into your passion and find the answer to all of your questions.<br>
+                    Come over for real experience, let’s get creative and explore more with every <br> faculty. Let’s
+                    play
+                    like a PROtogether!
+                </p>
             </div>
         </div>
-    </div>
 
-    <div class="bg-[#5012fb] ">
-        <div class="bg-white rounded-t-[40px] p-10 " data-aos="fade-up" data-aos-anchor-placement="top-center">
-            <h1 class="text-4xl font-bold text-center mb-20">LET’S MAP YOUR ROUTE!</h1>
-            <div class="flex pl-40 pr-40  justify-center items-center space-x-12">
-                <div>
-                    <h2 class="text-2xl font-bold mb-10">TRANSPORTATION</h2>
-                    <p>
-                        Bus : No. 39 / 510 / 520 to Rangsit <br>
-                        Public van :<br>
-                        • 85-93 (at Phayathai side near BTS Victory Monument)<br>
-                        • 118-1 Mo Chit - Rangsit<br>
-                        • 1008 Future Park Rangsit - Rangsit<br>
-                        BTS Skytrain (Green Line) :<br>
-                        • Victory Monument Station (Exit 3,4), and take public van No. 85-93 (Phayathai side)<br>
-                        • Mo Chit Station (Exit 3,4), and take public van No.118-1 (Mo Chit - Rangsit)<br>
-                        • Yaek Kor Por Aor Station (Exit 1,3), and take bus No. 39, 520<br>
-                        MRT (Blue Line) :<br>
-                        • Chatuchak Station (Exit 3,4), and take public van No.118-1 (Mo Chit - Rangsit)<br>
-                        SRT (Red Line) :<br>
-                        • Rangsit Station (Exit 3), and take minibus route Rangsit-Jarusorn<br>
-                    </p>
-                </div>
-                <div>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.637280709786!2d100.60837107586813!3d14.03950199056591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2801ad726b43d%3A0x4eb8ee1b97714ed4!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LiB4Lij4Li44LiH4LmA4LiX4LieIOC4leC4s-C4muC4pSDguITguKXguK3guIfguKvguJnguLbguYjguIcg4Lit4Liz4LmA4Lig4Lit4LiE4Lil4Lit4LiH4Lir4Lil4Lin4LiHIOC4m-C4l-C4uOC4oeC4mOC4suC4meC4tSAxMjEyMA!5e0!3m2!1sth!2sth!4v1726630529154!5m2!1sth!2sth"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="bg-white">
+            <div class="bg-black rounded-t-[40px] p-10 text-white" data-aos="fade-up"
+                data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mb-20">HIGHLIGHT</h1>
+                <div id="poster" class="flex flex-col "></div>
+            </div>
+        </div>
+
+        <div class="bg-black">
+            <div class="bg-[#5012fb] rounded-t-[40px] p-10 text-white" data-aos="fade-up"
+                data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mb-20">SPONSORS</h1>
+                <div class="lg:flex lg:space-x-16 pl-16 pb-20 ">
+                    <img src="/public/logo/image 17.png" alt="True" class="mb-10">
+                    <img src="/public/logo/image.png" alt="Lactasoy" class="mb-10">
                 </div>
             </div>
         </div>
 
+        <div class="bg-[#5012fb] ">
+            <div class="bg-white rounded-t-[40px] p-10 " data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mb-20">LET’S MAP YOUR ROUTE!</h1>
+                <div class="flex pl-40 pr-40  justify-center items-center space-x-12">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-10">TRANSPORTATION</h2>
+                        <p>
+                            Bus : No. 39 / 510 / 520 to Rangsit <br>
+                            Public van :<br>
+                            • 85-93 (at Phayathai side near BTS Victory Monument)<br>
+                            • 118-1 Mo Chit - Rangsit<br>
+                            • 1008 Future Park Rangsit - Rangsit<br>
+                            BTS Skytrain (Green Line) :<br>
+                            • Victory Monument Station (Exit 3,4), and take public van No. 85-93 (Phayathai side)<br>
+                            • Mo Chit Station (Exit 3,4), and take public van No.118-1 (Mo Chit - Rangsit)<br>
+                            • Yaek Kor Por Aor Station (Exit 1,3), and take bus No. 39, 520<br>
+                            MRT (Blue Line) :<br>
+                            • Chatuchak Station (Exit 3,4), and take public van No.118-1 (Mo Chit - Rangsit)<br>
+                            SRT (Red Line) :<br>
+                            • Rangsit Station (Exit 3), and take minibus route Rangsit-Jarusorn<br>
+                        </p>
+                    </div>
+                    <div class="h-96 w-96">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.637280709786!2d100.60837107586813!3d14.03950199056591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2801ad726b43d%3A0x4eb8ee1b97714ed4!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LiB4Lij4Li44LiH4LmA4LiX4LieIOC4leC4s-C4muC4pSDguITguKXguK3guIfguKvguJnguLbguYjguIcg4Lit4Liz4LmA4Lig4Lit4LiE4Lil4Lit4LiH4Lir4Lil4Lin4LiHIOC4m-C4l-C4uOC4oeC4mOC4suC4meC4tSAxMjEyMA!5e0!3m2!1sth!2sth!4v1726630529154!5m2!1sth!2sth"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
 
 </body>
 <script>
@@ -176,18 +195,24 @@
     for (let i = 0; i < data.length; i++) {
         // สร้าง div ใหม่
         const div = document.createElement('div');
-        div.classList.add('flex', 'lg:pl-80', 'lg:pr-80', 'lg:mb-14');
+        div.classList.add('xl:flex', 'xl:pl-80', 'xl:pr-80', 'xl:mb-14', 'space-y-4', 'xl:space-x-0', 'xl:space-y-12', 'xl:pl-40', 'xl:pr-40', 'xl:pb-20','lg:flex' ,'lg:space-x-16', 'lg:pl-16', 'lg:pb-20');
 
+        // สร้าง img element
         // สร้าง img element
         const img = document.createElement('img');
 
         img.src = data[i].image; // ใช้ index เพื่อเปลี่ยนภาพ
         img.alt = '';
+
+        // ใช้ Tailwind CSS เพื่อกำหนดขนาดของรูปภาพ
+        img.classList.add('w-72', 'h-96',); // กำหนดความกว้างเป็น 12rem และความสูงเป็น 8rem
+
         div.appendChild(img);
+
 
         // สร้าง div ที่เก็บข้อความ
         const textDiv = document.createElement('div');
-        textDiv.classList.add('pl-20');
+        textDiv.classList.add('lg:pl-20',);
 
         // สร้าง h1, h2, และ p
         const h1 = document.createElement('h1');
