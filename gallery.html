@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BU Open House</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+
+            /* ป้องกันการเลื่อนแนวนอน */
+        }
+
+        .hidden-scroll {
+            overflow-y: hidden;
+        }
+
+        /* ตั้งค่า box-sizing ให้กับทุกองค์ประกอบ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+    </style>
 </head>
 <body>
     <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
@@ -15,10 +43,10 @@
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button"
+                <!-- <button type="button"
                     class="text-white ring-2 ring-white hover:bg-blue-800  focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center">
                     <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
-                </button>
+                </button> -->
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -42,17 +70,65 @@
                             class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">ACTIVITIES</a>
                     </li>
                     <li>
-                        <a href="/gallery" id="nav-gallery"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">GALLERY</a>
+                        <a href="../gallery.html" id="nav-gallery"
+                            class="block py-2 px-3  ring-2 ring-white rounded-3xl md:bg-white md:p-2 md:w-36 text-center bg-white text-[#5012fb] xs:w-full w-full">GALLERY</a>
                     </li>
                     <li>
-                        <a href="./faq" id="nav-faq"
+                        <a href="../faq.html" id="nav-faq"
                             class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">FAQ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+    <div class="bg-black hidden-scroll">
+        <div class="bg-black">
+            <div class="bg-black p-10 text-white" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mt-5"><br>GALLERY</h1>
+                <p class="text-center">
+                    Invite the younger generation to open up their perspectives on career paths, discover their passion, <br>
+                    and gain knowledge from seniors across 14 faculties, along with insights from over 20 partnering companies <br>
+                    sharing their experiences. Enjoy musical performances from high school students, Bangkok University students, <br>
+                    and many renowned artists. Plus, indulge in delicious food from a parade of food trucks around the university.
+                </p>
+            </div>
+        </div>
+        <div class="bg-black">
+            <div class="bg-white rounded-t-[40px] p-10" data-aos="fade-up">
+                <div  class="flex flex-col items-center" data-aos-anchor-placement="top-center">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal1.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal2.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal3.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal4.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal5.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal6.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal7.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal8.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal9.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal10.png" data-aos="fade-up">
+                    <img class="h-auto max-w-full mb-5" src="/public/gallery/gal11.png" data-aos="fade-up">
+                </div>
+            </div>
+        </div>
 </body>
+<script>
+
+    AOS.init();
+
+    // เลือกปุ่มและเมนูโดยใช้ id
+    const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+    const navbarMenu = document.getElementById('navbar-sticky');
+
+    // เพิ่ม event listener เพื่อเปิด/ปิดเมนูเมื่อคลิกปุ่ม
+    toggleButton.addEventListener('click', function () {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+        // สลับค่าของ aria-expanded
+        toggleButton.setAttribute('aria-expanded', !isExpanded);
+
+        // แสดงหรือซ่อนเมนูโดยใช้ class hidden ของ Tailwind CSS
+        navbarMenu.classList.toggle('hidden');
+    });
+</script>
 </html>
+

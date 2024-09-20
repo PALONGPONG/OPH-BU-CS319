@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BU Open House</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+
+            /* ป้องกันการเลื่อนแนวนอน */
+        }
+
+        .hidden-scroll {
+            overflow-y: hidden;
+        }
+
+        /* ตั้งค่า box-sizing ให้กับทุกองค์ประกอบ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+    </style>
 </head>
 <body>
     <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
@@ -15,10 +43,10 @@
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button"
+                <!-- <button type="button"
                     class="text-white ring-2 ring-white hover:bg-blue-800  focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center">
                     <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
-                </button>
+                </button> -->
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -42,17 +70,126 @@
                             class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">ACTIVITIES</a>
                     </li>
                     <li>
-                        <a href="/gallery" id="nav-gallery"
+                        <a href="../gallery.html" id="nav-gallery"
                             class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">GALLERY</a>
                     </li>
                     <li>
-                        <a href="./faq" id="nav-faq"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">FAQ</a>
+                        <a href="../faq.html" id="nav-faq"
+                            class="block py-2 px-3  ring-2 ring-white rounded-3xl md:bg-white md:p-2 md:w-36 text-center bg-white text-[#5012fb] xs:w-full w-full">FAQ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+    <div class="hidden-scroll">
+        <div class="w-100 h-36 bg-black">
+        </div>
+        <div class="bg-black">
+            <div class="w-100 h-100 bg-white rounded-t-[40px] p-5 pb-12" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <h1 class="text-4xl font-bold text-center mb-16 mt-5">FAQ</h1>
+                <ul class="space-y-5">
+                    
+                    <li class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full text-2xl font-bold py-4 focus:outline-none" onclick="toggleAccordion('content-1')">
+                            When and where will the BU Open House be held?
+                            <span class="rotate-0 transition-transform transform" id="icon-1">&#x3e;</span>
+                        </button>
+                        <div class="hidden mt-4 text-2xl font-bold" id="content-1">
+                            Join us on August 29-31 at Bangkok University - Main Campus (Rangsit)
+                        </div>
+                    </li>
+                    
+                    <li class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full text-2xl font-bold py-4 focus:outline-none" onclick="toggleAccordion('content-2')">
+                            How many faculties can I register for activities?
+                            <span class="rotate-0 transition-transform transform" id="icon-2">&#x3e;</span>
+                        </button>
+                        <div class="hidden mt-4 text-2xl font-bold" id="content-2">
+                            You only need to register once for the BU OPEN HOUSE. After that, you can view the activity schedules for the different clusters on the website. 
+                            If you’re interested in any specific activities, simply scan the QR code at each faculty/program’s activity station to join in!
+                        </div>
+                    </li>
+                    
+                    <li class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full text-2xl font-bold py-4 focus:outline-none" onclick="toggleAccordion('content-3')">
+                            What should I wear to the Open House?
+                            <span class="rotate-0 transition-transform transform" id="icon-3">&#x3e;</span>
+                        </button>
+                        <div class="hidden mt-4 text-2xl font-bold" id="content-3">
+                            Bangkok University welcomes diversity in attire. You can choose between wearing your school uniform or a free-style outfit, as long as it is appropriate for an educational setting.
+                        </div>
+                    </li>
+                    
+                    <li class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full text-2xl font-bold py-4 focus:outline-none" onclick="toggleAccordion('content-4')">
+                            What time do the faculty activities start and end?
+                            <span class="rotate-0 transition-transform transform" id="icon-4">&#x3e;</span>
+                        </button>
+                        <div class="hidden mt-4 text-2xl font-bold" id="content-4">
+                            All faculty activities will start at 9:00 AM and end at 4:30 PM. After that, enjoy a special evening event featuring a concert and musical performances.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white">
+                <div class="bg-[#5012fb] rounded-t-[40px] p-5 text-white" data-aos="fade-up" data-aos-anchor-placement=""="top-center">
+                    <h1 class="text-4xl font-bold text-center mb-5">CONTACT US</h1>
+                    <div class="ml-24">
+                        <div>
+                            <p>Phahonyothin Rd, Khlong Nueng,<br>Khlong Luang, Pathum Thani 12120</p>
+                        </div>
+                        <div class="inline-flex mt-5">
+                            <a href="https://www.facebook.com/bangkokuniversity/?locale=th_TH">
+                                <img src="public/logo/facebook.png" class="w-5 h-5" alt="Facebook Logo">
+                            </a>
+                            <a href="https://www.facebook.com/bangkokuniversity/?locale=th_TH" class="ml-2">
+                                <p>Bangkok University</p>
+                            </a>
+                        </div>
+                        <div class="inline-flex mt-5">
+                            <a href="https://www.instagram.com/bangkok_bu/?hl=en">
+                                <img src="public/logo/insta.png" class="w-5 h-5" alt="Instagram Logo">
+                            </a>
+                            <a href="https://www.instagram.com/bangkok_bu/?hl=en" class="ml-2">
+                                <p>bangkok_bu</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+
+    AOS.init();
+
+    // เลือกปุ่มและเมนูโดยใช้ id
+    const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+    const navbarMenu = document.getElementById('navbar-sticky');
+
+    // เพิ่ม event listener เพื่อเปิด/ปิดเมนูเมื่อคลิกปุ่ม
+    toggleButton.addEventListener('click', function () {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+        // สลับค่าของ aria-expanded
+        toggleButton.setAttribute('aria-expanded', !isExpanded);
+
+        // แสดงหรือซ่อนเมนูโดยใช้ class hidden ของ Tailwind CSS
+        navbarMenu.classList.toggle('hidden');
+    });
+
+    function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id.split('-')[1]);
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-90');
+        } else {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-90');
+        }
+    }
+</script>
 </html>
