@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BU Open House</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
 
+            /* ป้องกันการเลื่อนแนวนอน */
+        }
+
+        .hidden-scroll {
+            overflow-y: hidden;
+        }
+
+        /* ตั้งค่า box-sizing ให้กับทุกองค์ประกอบ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+    </style>
 </head>
 <body>
-    <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0   ">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
             <a href="https://bu.ac.th" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="/public/BU logo horizontal.png" class="h-8" alt="Flowbite Logo">
                 <link rel="stylesheet"
@@ -28,32 +55,166 @@
                         viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
+                    </svg>    
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  space-y-6 md:space-y-0">
                     <li>
                         <a href="../index.html" id="nav-home"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">HOME</a>
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">HOME</a>
                     </li>
                     <li>
                         <a href="../activities.html" id="nav-activities"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">ACTIVITIES</a>
+                            class="block py-2 px-3 bg-white text-[#5012fb] ring-2 ring-white rounded-3xl md:bg-white md:p-2 md:w-36 text-center w-full">ACTIVITIES</a>
                     </li>
                     <li>
                         <a href="../gallery.html" id="nav-gallery"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">GALLERY</a>
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">GALLERY</a>
                     </li>
                     <li>
                         <a href="../faq.html" id="nav-faq"
-                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 w-36 text-center hover:bg-white hover:text-[#5012fb]">FAQ</a>
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">FAQ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Filter Section -->
+    <section class="pt-20">
+        <div class="flex justify-center space-x-6 py-6">
+            <button class="px-4 py-2 bg-white text-black font-bold rounded-full filter-btn hover:bg-orange-500 hover:text-white" data-filter="Creative">Creative Cluster</button>
+            <button class="px-4 py-2 bg-white text-black font-bold rounded-full filter-btn hover:bg-pink-500 hover:text-white" data-filter="Business">Business Cluster</button>
+            <button class="px-4 py-2 bg-white text-black font-bold rounded-full filter-btn hover:bg-green-500 hover:text-white" data-filter="Innovative">Innovative Cluster</button>
+            <button class="px-4 py-2 bg-white text-black font-bold rounded-full filter-btn hover:bg-yellow-500 hover:text-white" data-filter="International">BU International</button>
+        </div>
+    </section>
+
+    <!-- Event Cards Section -->
+    <section class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 pb-20">
+
+        <!-- Event Card 1 (Creative Cluster) -->
+        <div class="bg-[#1E1E1E] p-6 rounded-lg shadow-lg flex flex-col justify-between" data-category="Creative">
+            <div>
+                <h3 class="text-xl font-bold">Presenting Design Concepts Using Collage Techniques</h3>
+                <p>School of Architecture | Architecture | 20 Participants | <span class="text-green-400">Certificate</span></p>
+                <!-- Speaker Profile Section as Button -->
+                <a href="speaker-architecture.html" class="flex items-center space-x-2 mt-2 mb-4 hover:underline hover:text-white">
+                    <div class="w-10 h-10 bg-cover rounded-full" style="background-image: url('https://via.placeholder.com/100');"></div> <!-- Circle Image -->
+                    <p class="italic text-gray-400">Speaker profile</p>
+                </a>
+                
+                <p>Introducing a workshop to boost your creativity through collage techniques! We'll explore architectural perspectives by cutting images from magazines and piecing them together to form new ideas. Whether it's homes, buildings, architectural landscapes, or diverse people, let's see how we can express our design imagination uniquely.</p>
+                <p><strong>Location:</strong> B5 Building, 2nd Floor <br><strong>Sessions:</strong> 11:00-11:40 / 14:00-14:40</p>
+            </div>
+            <div class="mt-4">
+                <a href="register-architecture.html" class="bg-orange-500 text-white font-bold py-2 px-4 rounded-full">REGISTER</a>
+            </div>
+        </div>
+
+        <!-- Event Card 2 (Business Cluster) -->
+        <div class="bg-[#1E1E1E] p-6 rounded-lg shadow-lg flex flex-col justify-between" data-category="Business">
+            <div>
+                <h3 class="text-xl font-bold">Analyzing Cases by using Mock Trial Court Activities</h3>
+                <p>School of Law | Law Program | 40 Participants | <span class="text-green-400">Certificate</span></p>
+                <!-- Speaker Profile Section as Button -->
+                <a href="speaker-law.html" class="flex items-center space-x-2 mt-2 mb-4 hover:underline hover:text-white">
+                    <div class="w-10 h-10 bg-cover rounded-full" style="background-image: url('https://via.placeholder.com/100');"></div> <!-- Circle Image -->
+                    <p class="italic text-gray-400">Speaker profile</p>
+                </a>
+                <p>Get inspired to pursue a legal career by joining us in analyzing real-life cases adapted into dramas that reflect societal issues. Explore legal knowledge and challenge your critical thinking through interactive simulations!</p>
+                <p><strong>Location:</strong> A3-301 <br><strong>Sessions:</strong> 09:00-09:30 / 10:00-10:30 / 11:00-11:30 / 14:00-14:30</p>
+            </div>
+            
+            <div class="mt-4">
+                <a href="register-law.html" class="bg-pink-500 text-white font-bold py-2 px-4 rounded-full">REGISTER</a>
+            </div>
+        </div>
+
+        <!-- Event Card 3 (Innovative Cluster) -->
+        <div class="bg-[#1E1E1E] p-6 rounded-lg shadow-lg flex flex-col justify-between" data-category="Innovative">
+            <div>
+                <h3 class="text-xl font-bold">Full-Stack Web Development Techniques (Front End and Back End)</h3>
+                <p>School of IT | Computer Science | 40 Participants | <span class="text-green-400">Certificate</span></p>
+                <!-- Speaker Profile Section as Button -->
+                <button class="flex items-center space-x-2 mt-2 mb-4 hover:underline hover:text-white">
+                    <div class="w-10 h-10 bg-cover rounded-full" style="background-image: url('https://via.placeholder.com/100');"></div> <!-- Circle Image -->
+                    <p class="italic text-gray-400">Speaker profile</p>
+                </button>
+                <p>Calling anyone passionate about programming and who loves the complexity of code writing! Here's your chance to join activities that help you experience both Front-End and Back-End, gaining in-depth knowledge and advanced techniques from experts.</p>
+                <p><strong>Location:</strong> A1-407 <br><strong>Sessions:</strong> 10:00-11:00 / 13:00-14:00</p>
+            </div>
+            <div class="mt-4">
+                <button class="bg-green-500 text-white font-bold py-2 px-4 rounded-full">REGISTER</button>
+            </div>
+        </div>
+
+        <!-- Event Card 4 (International Cluster) -->
+        <div class="bg-[#1E1E1E] p-6 rounded-lg shadow-lg flex flex-col justify-between" data-category="International">
+            <div>
+                <h3 class="text-xl font-bold">Business Idea Creation</h3>
+                <p>BU International | Entrepreneurship | 20 Participants | <span class="text-green-400">Certificate</span></p>
+                <!-- Speaker Profile Section as Button -->
+                <button class="flex items-center space-x-2 mt-2 mb-4 hover:underline hover:text-white">
+                    <div class="w-10 h-10 bg-cover rounded-full" style="background-image: url('https://via.placeholder.com/100');"></div> <!-- Circle Image -->
+                    <p class="italic text-gray-400">Speaker profile</p>
+                </button>
+                <p>Step up to the Entrepreneurial Challenge and work with designated existing products from current BUSM students. This challenge will cover the four crucial components of a basic business plan: Who, What, How, and USP (Unique Selling Proposition).</p>
+                <p><strong>Location:</strong> C6, Theater Room <br><strong>Sessions:</strong> 10:00-10:30 / 11:30-12:00 / 13:00-13:30 / 14:30-15:00</p>
+            </div>
+            <div class="mt-4">
+                <button class="bg-yellow-500 text-white font-bold py-2 px-4 rounded-full">REGISTER</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- JavaScript for Filtering -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the filter category from the button's data-filter attribute
+                const filterCategory = button.getAttribute('data-filter');
+
+                // Remove active class from all buttons and add to the clicked button
+                filterButtons.forEach(btn => btn.classList.remove('bg-orange-500'));
+                button.classList.add('bg-orange-500');
+
+                // Show/Hide the cards based on the selected filter
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory === filterCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+
+        AOS.init();
+    
+        // เลือกปุ่มและเมนูโดยใช้ id
+        const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const navbarMenu = document.getElementById('navbar-sticky');
+    
+        // เพิ่ม event listener เพื่อเปิด/ปิดเมนูเมื่อคลิกปุ่ม
+        toggleButton.addEventListener('click', function () {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    
+            // สลับค่าของ aria-expanded
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+    
+            // แสดงหรือซ่อนเมนูโดยใช้ class hidden ของ Tailwind CSS
+            navbarMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

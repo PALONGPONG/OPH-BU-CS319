@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BU Open House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hidden-scroll {
+            overflow-y: hidden;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        /* Popup container styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 9999;
+            width: 350px;
+            height: 350px;
+        }
+
+        /* Fade animation */
+        .fade-in-out {
+            animation: fadeInOut 3s forwards;
+        }
+
+        /* Keyframes for the fade in and fade out effect */
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
+            <a href="https://bu.ac.th" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/public/BU logo horizontal.png" class="h-8" alt="BU Logo">
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>    
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  space-y-6 md:space-y-0">
+                    <li>
+                        <a href="../index.html" id="nav-home"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">HOME</a>
+                    </li>
+                    <li>
+                        <a href="../activities.html" id="nav-activities"
+                            class="block py-2 px-3 bg-white text-[#5012fb] ring-2 ring-white rounded-3xl md:bg-white md:p-2 md:w-36 text-center w-full">ACTIVITIES</a>
+                    </li>
+                    <li>
+                        <a href="../gallery.html" id="nav-gallery"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">GALLERY</a>
+                    </li>
+                    <li>
+                        <a href="../faq.html" id="nav-faq"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Card -->
+    <div class="bg-black min-h-screen flex justify-center items-center" >
+        <div class="bg-white rounded-3xl w-[90%] md:w-[750px] lg:w-[850px] max-w-[850px] p-8 md:p-10 relative">
+            
+            <!-- Back Button and Title -->
+            <div class="flex items-center space-x-2 mb-6 mt-[-20px] ml-[-20px]">
+                <a href="activities.html" class="text-black hover:text-gray-500">
+                    <!-- Back arrow icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
+                <p class="italic text-gray-500">register</p>
+            </div>
+
+            <!-- Event Title and Details -->
+            <h2 class="text-2xl font-bold text-black">Presenting Design Concepts Using Collage Techniques</h2>
+            <p class="text-gray-600">School of Architecture | Architecture | 20 Participants</p>
+            <div class="flex items-center mt-2">
+                <p class="text-gray-600 mr-2">Certificate</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+
+            <!-- Speaker Section -->
+            <div class="flex items-center space-x-4 mt-4">
+                <div class="w-16 h-16 bg-gray-300 rounded-full"></div>
+                <div>
+                    <p class="font-bold text-black">Law Speaker</p>
+                    <p class="text-black">Law Professor</p>
+                </div>
+            </div>
+
+            <!-- Event Description -->
+            <p class="mt-4 text-black">Get inspired to pursue a legal career by joining us in analyzing real-life cases adapted into dramas that reflect societal issues. Explore legal knowledge and challenge your critical thinking through interactive simulations!</p>
+            <p class="mt-4 text-black"><strong>Location:</strong> A3-301</p>
+            <p class="text-black"><strong>Sessions:</strong> 09:00-09:30 / 10:00-10:30 / 11:00-11:30 / 14:00-14:30</p>
+
+            <!-- Registration Form -->
+            <div class="mt-6">
+                <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input type="text" name="name" placeholder="name" class="border rounded-lg p-2">
+                    <select name="gender" class="border rounded-lg p-2">
+                        <option value="">gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" name="school" placeholder="school" class="border rounded-lg p-2">
+                    
+                    <input type="date" name="date" placeholder="date" class="border rounded-lg p-2">
+                    <select name="session" class="border rounded-lg p-2">
+                        <option value="">session</option>
+                        <option value="morning">09:00-09:30</option>
+                        <option value="morning-2">10:00-10:30</option>
+                        <option value="morning-3">11:00-11:30</option>
+                        <option value="afternoon">14:00-14:40</option>
+                    </select>
+                </form>
+            </div>
+
+            <!-- Register Button -->
+            <div class="mt-8 flex justify-end">
+                <button id="registerButton" class="bg-pink-500 text-white font-bold py-2 px-4 rounded-full">REGISTER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup for registered message -->
+    <div id="popup" class="popup">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-black mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <p class="text-xl font-bold mt-4 text-black">REGISTERED!</p>
+        <p class="text-lg text-black">THANK YOU</p>
+    </div>
+
+    <script>
+        AOS.init();
+
+        const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const navbarMenu = document.getElementById('navbar-sticky');
+    
+        toggleButton.addEventListener('click', function () {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+            navbarMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript to show the popup and fade it out, then redirect
+        document.getElementById("registerButton").addEventListener("click", function() {
+            // Get the popup element
+            var popup = document.getElementById("popup");
+
+            // Show the popup
+            popup.style.display = "block";
+
+            // Add fade-in-out animation
+            popup.classList.add("fade-in-out");
+
+            // After the animation ends (3 seconds), hide popup and redirect
+            setTimeout(function() {
+                popup.style.display = "none";
+                popup.classList.remove("fade-in-out");
+
+                // Redirect to activities page
+                window.location.href = "activities.html";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
