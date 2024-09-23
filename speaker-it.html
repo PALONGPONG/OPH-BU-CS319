@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BU Open House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+
+            /* ป้องกันการเลื่อนแนวนอน */
+        }
+
+        .hidden-scroll {
+            overflow-y: hidden;
+        }
+
+        /* ตั้งค่า box-sizing ให้กับทุกองค์ประกอบ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-[#5012fb] fixed w-full z-20 top-0 start-0   ">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
+            <a href="https://bu.ac.th" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/public/BU logo horizontal.png" class="h-8" alt="Flowbite Logo">
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <!-- <button type="button"
+                    class="text-white ring-2 ring-white hover:bg-blue-800  focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center">
+                    <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+                </button> -->
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>    
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  space-y-6 md:space-y-0">
+                    <li>
+                        <a href="../index.html" id="nav-home"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">HOME</a>
+                    </li>
+                    <li>
+                        <a href="../activities.html" id="nav-activities"
+                            class="block py-2 px-3  ring-2 ring-white rounded-3xl md:bg-white md:p-2 md:w-36 text-center bg-white text-[#5012fb] xs:w-full w-full">ACTIVITIES</a>
+                    </li>
+                    <li>
+                        <a href="../gallery.html" id="nav-gallery"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">GALLERY</a>
+                    </li>
+                    <li>
+                        <a href="../faq.html" id="nav-faq"
+                            class="block py-2 px-3 text-white ring-2 ring-white rounded-3xl md:bg-transparent md:p-2 md:w-36 text-center w-full hover:bg-white hover:text-[#5012fb]">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+   <!-- Speaker Profile Card -->
+   <div class="bg-black min-h-screen flex justify-center items-center" style="margin-top: -50px;">
+    <div class="bg-white rounded-3xl mt-20 w-[90%] md:w-[750px] lg:w-[850px] max-w-[850px] p-8 md:p-10 relative">
+        
+        <!-- Back Button and Title -->
+        <div class="flex items-center space-x-2 mb-6 mt-[-20px] ml-[-20px]">
+            <a href="activities.html" class="text-black hover:text-gray-500">
+                <!-- Back arrow icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <p class="italic text-gray-500">Speaker profile</p>
+        </div>
+
+        <!-- Speaker Details -->
+        <div class="flex items-center space-x-6">
+            <!-- Speaker Profile Image -->
+            <div class="w-24 h-24 bg-gray-300 rounded-full"></div>
+            
+            <!-- Speaker Name and Position -->
+            <div>
+                <p class="font-bold text-xl md:text-2xl">IT Speaker</p>
+                <p class="text-gray-600">IT Professor</p>
+            </div>
+        </div>
+
+        <!-- Speaker Description -->
+        <div class="mt-4 text-gray-700 text-sm md:text-base">
+            <p>IT professor speaker is not just an educator; they are a bridge between academia and the rapidly evolving tech industry. Their expertise spans various domains, including cybersecurity, data analytics, artificial intelligence, and software development.</p>
+            <p class="mt-4">A significant aspect of their role involves engaging with audiences through dynamic presentations and interactive workshops. By leveraging storytelling techniques and practical examples, they make complex subjects accessible and relatable.</p>
+            <p class="mt-4">In a classroom workshop, participants can expect an engaging and interactive experience designed to deepen their understanding of key technological concepts.</p>
+        </div>
+
+    </div>
+</div>
+    <script>
+
+        AOS.init();
+    
+        // เลือกปุ่มและเมนูโดยใช้ id
+        const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const navbarMenu = document.getElementById('navbar-sticky');
+    
+        // เพิ่ม event listener เพื่อเปิด/ปิดเมนูเมื่อคลิกปุ่ม
+        toggleButton.addEventListener('click', function () {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    
+            // สลับค่าของ aria-expanded
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+    
+            // แสดงหรือซ่อนเมนูโดยใช้ class hidden ของ Tailwind CSS
+            navbarMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
